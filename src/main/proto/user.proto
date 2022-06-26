@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package com.pm.grpc.users;
+
+option java_multiple_files= true;
+option java_package="com.pm.grpc.users";
+
+service UserService{
+  rpc getUserDetails(UserRequest) returns (UserResponse);
+}
+
+message UserRequest{
+  string userId=1;
+}
+
+message UserResponse{
+  string userId=1;
+  string username=2;
+  string name=3;
+  int32 age=4;
+  repeated Order orders=5;
+}
+
+message Order{
+  int32 orderId=1;
+  int32 userId=2;
+  string productName=3;
+  string description=4;
+  double totalPrice=5;
+}

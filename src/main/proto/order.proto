@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_package ="com.pm.grpc.orders";
+option java_multiple_files=true;
+
+service OrderService{
+  rpc getOrdersByUserId(OrderRequest) returns (OrderResponse);
+}
+
+message OrderRequest{
+  int32 userId=1;
+}
+
+message OrderResponse{
+ repeated Order orders=1;
+}
+
+message Order{
+  int32 orderId=1;
+  int32 userId=2;
+  string productName=3;
+  string description=4;
+  double totalPrice=5;
+}
