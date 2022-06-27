@@ -22,7 +22,7 @@ public class UserServiceImpl extends UserServiceGrpc.UserServiceImplBase {
         UserDtoResponse dto =new UserDtoResponse();
         dto.setUserId(request.getUserId());
         dto.setName("Mahendra");
-        dto.setUsername("mahi2728");
+        dto.setUsername("roman@123");
         dto.setAge(27);
 
     // Add channel config here to call Order Service
